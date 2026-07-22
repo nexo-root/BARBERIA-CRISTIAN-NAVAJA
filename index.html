@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristian Navajas Barber Shop — Cortes, barba y diseños en Posadas | Blas Parera 4691</title>
+<meta name="description" content="Barbería en Posadas: cortes para todas las edades, perfilado de barba y cejas, diseños freestyle. Lun a sáb 9 a 21 por orden de llegada. Avenida Blas Parera 4691, Posadas.">
+<meta property="og:title" content="Cristian Navajas Barber Shop — Posadas">
+<meta property="og:description" content="Cortes para todas las edades · Barba · Diseños. Avenida Blas Parera 4691, Posadas. Lun a sáb de 9 a 21 hs.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/cabeza.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarberShop",
+  "name": "Cristian Navajas Barber Shop",
+  "image": "assets/logo-completo.png",
+  "telephone": "+5493765031630",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenida Blas Parera 4691",
+    "addressLocality": "Posadas",
+    "addressRegion": "Misiones",
+    "addressCountry": "AR"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "14:00" }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/cristiannavajas_barbershop",
+    "https://www.tiktok.com/@cristian.navajas",
+    "https://www.facebook.com/cristiannavajass"
+  ],
+  "priceRange": "$$"
+}
+</script>
+<style>
+:root{
+  --negro:#151412;
+  --negro-2:#211f1c;
+  --crema:#f0e8d5;
+  --crema-2:#e4dac2;
+  --rojo:#c53026;
+  --rojo-2:#9e211a;
+  --gris:#4a4538;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+body{
+  font-family:'Barlow',sans-serif;background:var(--crema);color:var(--negro);
+  overflow-x:hidden;max-width:100%;line-height:1.55;
+}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{max-width:100%;display:block}
+a{color:inherit}
+.slab{font-family:'Alfa Slab One',serif;font-weight:400}
+.cond{font-family:'Barlow Condensed',sans-serif}
+
+/* ============ barra utilitaria ============ */
+.barra{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  background:var(--crema);border-bottom:2px solid var(--negro);
+  padding:.55rem clamp(1rem,4vw,3rem);
+  font-family:'Barlow Condensed';font-weight:600;font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.12em;
+}
+.barra a{text-decoration:none}
+.barra a:hover{color:var(--rojo)}
+.barra .tel{display:flex;align-items:center;gap:.45rem}
+.barra .tel::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--rojo);animation:lat 2s infinite}
+@keyframes lat{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ============ portada (póster) ============ */
+.portada{
+  background:var(--negro);color:var(--crema);
+  padding:clamp(3rem,8vh,5.5rem) clamp(1.2rem,4vw,3rem) clamp(3.2rem,8vh,5.5rem);
+  text-align:center;position:relative;overflow:hidden;
+}
+/* rayas laterales del local, solo en los bordes — el centro queda limpio */
+.portada::before,.portada::after{
+  content:"";position:absolute;top:0;bottom:0;width:clamp(30px,7vw,110px);
+  background:repeating-linear-gradient(90deg,var(--crema) 0,var(--crema) 9px,transparent 9px,transparent 26px);
+  opacity:.14;
+}
+.portada::before{left:0}
+.portada::after{right:0}
+.portada-inner{position:relative;max-width:900px;margin:0 auto}
+.badge{width:min(46vw,300px);margin:0 auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.5))}
+.portada h1{
+  margin-top:2rem;
+  font-size:clamp(2rem,5.4vw,4rem);line-height:1.04;text-transform:uppercase;
+}
+.portada h1 em{font-style:normal;color:var(--rojo);display:block;font-size:.62em;letter-spacing:.02em}
+.portada .servicios-linea{
+  margin-top:1.5rem;
+  font-family:'Barlow Condensed';font-weight:600;font-size:clamp(.95rem,1.6vw,1.2rem);
+  text-transform:uppercase;letter-spacing:.34em;color:color-mix(in srgb,var(--crema) 85%,transparent);
+}
+.portada .cta-zona{margin-top:2.3rem;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.btn-wsp{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--rojo);color:var(--crema)!important;
+  padding:1rem 2rem;border-radius:6px;
+  font-weight:700;text-decoration:none;font-size:1.05rem;
+  box-shadow:0 14px 34px -10px rgba(197,48,38,.55);
+  transition:background .2s,transform .2s;
+}
+.btn-wsp:hover{background:var(--rojo-2);transform:translateY(-2px)}
+.btn-wsp svg{width:19px;height:19px;flex:none}
+.portada .sin-turno{
+  font-family:'Barlow Condensed';font-weight:600;font-size:1rem;
+  text-transform:uppercase;letter-spacing:.14em;color:color-mix(in srgb,var(--crema) 82%,transparent);
+}
+
+/* ============ faja mudanza ============ */
+.mudanza{
+  background:var(--rojo);color:var(--crema);
+  padding:.85rem clamp(1rem,4vw,3rem);
+  display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;
+  font-family:'Barlow Condensed';font-weight:700;font-size:clamp(1.05rem,2vw,1.35rem);
+  text-transform:uppercase;letter-spacing:.1em;text-align:center;
+  border-top:3px solid var(--negro);border-bottom:3px solid var(--negro);
+}
+.mudanza .flecha{font-family:'Alfa Slab One'}
+
+/* ============ secciones ============ */
+section{padding:clamp(3rem,7vh,5.5rem) clamp(1.2rem,4vw,3rem)}
+.inner{max-width:1180px;margin:0 auto}
+.cabezal{display:flex;align-items:baseline;gap:1.1rem;flex-wrap:wrap}
+.cabezal .nro{font-family:'Alfa Slab One';font-size:clamp(2.6rem,5vw,4rem);color:transparent;-webkit-text-stroke:2px var(--rojo);line-height:1}
+.cabezal h2{font-family:'Alfa Slab One';font-size:clamp(1.7rem,3.4vw,2.7rem);text-transform:uppercase;line-height:1.08}
+.cabezal .nota{width:100%;margin-top:.4rem;color:var(--gris);font-size:1.08rem;max-width:44em}
+
+/* ============ galería mosaico ============ */
+.mosaico{
+  margin-top:2.4rem;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  grid-auto-rows:150px;
+}
+.pieza{border:3px solid var(--negro);border-radius:6px;overflow:hidden;position:relative;background:var(--crema-2)}
+.pieza img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.pieza:hover img{transform:scale(1.05)}
+.pieza.alta{grid-row:span 3}
+.pieza.media{grid-row:span 2}
+.pieza.gira-a{transform:rotate(-1.1deg)}
+.pieza.gira-b{transform:rotate(1deg)}
+.mosaico-pie{margin-top:1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.link-negro{
+  display:inline-flex;align-items:center;gap:.55rem;font-weight:700;text-decoration:none;
+  font-family:'Barlow Condensed';font-size:1.15rem;text-transform:uppercase;letter-spacing:.06em;
+  border-bottom:3px solid var(--rojo);padding-bottom:.2rem;
+}
+.link-negro:hover{color:var(--rojo)}
+.link-negro svg{width:19px;height:19px}
+.mosaico-pie .social{color:var(--gris);font-size:1.02rem}
+.mosaico-pie .social b{color:var(--negro)}
+@media(max-width:860px){.mosaico{grid-template-columns:repeat(3,1fr)}.pieza:nth-child(10){display:none}}
+@media(max-width:560px){.mosaico{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px}.pieza:nth-child(10){display:block}}
+
+/* ============ pizarra de precios ============ */
+.zona-pizarra{background:var(--negro);color:var(--crema);position:relative;overflow:hidden}
+.zona-pizarra::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,var(--crema) 0,var(--crema) 9px,transparent 9px,transparent 26px);
+  opacity:.05;
+}
+.zona-pizarra .cabezal h2{color:var(--crema)}
+.zona-pizarra .cabezal .nota{color:color-mix(in srgb,var(--crema) 80%,transparent)}
+.pizarra{
+  position:relative;margin-top:2.4rem;
+  border:3px solid var(--crema);outline:3px solid var(--crema);outline-offset:6px;
+  border-radius:4px;padding:clamp(1.6rem,4vw,3rem);
+  max-width:760px;margin-left:auto;margin-right:auto;
+  background:var(--negro-2);
+}
+.pizarra-titulo{
+  text-align:center;font-family:'Barlow Condensed';font-weight:700;
+  font-size:1.05rem;letter-spacing:.4em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--crema) 80%,transparent);
+  margin-bottom:1.8rem;
+}
+.item{
+  display:flex;align-items:baseline;gap:.8rem;
+  padding:.85rem 0;
+}
+.item + .item{border-top:1px solid color-mix(in srgb,var(--crema) 14%,transparent)}
+.item .nombre{font-family:'Barlow Condensed';font-weight:700;font-size:clamp(1.25rem,2.4vw,1.7rem);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.item .puntos{flex:1;border-bottom:3px dotted color-mix(in srgb,var(--crema) 35%,transparent);transform:translateY(-6px)}
+.item .valor{font-family:'Alfa Slab One';font-size:clamp(1.05rem,2vw,1.4rem);color:var(--rojo);white-space:nowrap}
+.item .detalle{width:100%;font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.5rem;padding-bottom:.5rem}
+.item-wrap{display:flex;flex-direction:column}
+.item-wrap + .item-wrap{border-top:1px solid color-mix(in srgb,var(--crema) 14%,transparent)}
+.item-wrap.promo{
+  border:2px dashed var(--rojo);border-radius:6px;
+  padding:.2rem .9rem .1rem;margin-bottom:.9rem;
+  background:color-mix(in srgb,var(--rojo) 10%,transparent);
+}
+.item-wrap.promo .nombre{color:var(--crema)}
+.item-wrap.promo + .item-wrap{border-top:none}
+.pizarra-pie{margin-top:1.6rem;text-align:center;font-size:.98rem;color:color-mix(in srgb,var(--crema) 78%,transparent)}
+/* poste de barbero colgado de la pizarra */
+.poste{
+  position:absolute;left:-58px;top:50%;transform:translateY(-50%);
+  width:36px;height:150px;border-radius:20px;
+  border:3px solid var(--crema);
+  background:repeating-linear-gradient(45deg,var(--rojo) 0,var(--rojo) 13px,var(--crema) 13px,var(--crema) 26px,var(--negro) 26px,var(--negro) 39px);
+  background-size:100% 220%;
+}
+@media(max-width:980px){.poste{display:none}}
+
+/* ============ horarios (chapas) ============ */
+.chapas{margin-top:0;display:grid;grid-template-columns:1.15fr .85fr;gap:1.6rem}
+.chapa{
+  border:3px solid var(--negro);border-radius:8px;
+  padding:clamp(1.5rem,3vw,2.3rem);
+  box-shadow:8px 8px 0 var(--negro);
+  background:var(--crema);
+}
+.chapa h3{font-family:'Alfa Slab One';font-size:clamp(1.45rem,2.6vw,2rem);text-transform:uppercase;line-height:1.12}
+.chapa h3 em{font-style:normal;color:var(--rojo)}
+.chapa p{margin-top:.8rem;color:#332f27;font-size:1.06rem;line-height:1.6;max-width:38em}
+.chapa .franja{
+  margin-top:1.3rem;display:inline-block;
+  font-family:'Barlow Condensed';font-weight:700;font-size:1.4rem;text-transform:uppercase;letter-spacing:.05em;
+  background:var(--negro);color:var(--crema);padding:.35rem .9rem;border-radius:4px;
+}
+.chapa.roja{background:var(--rojo);color:var(--crema)}
+.chapa.roja p{color:var(--crema)}
+.chapa.roja .franja{background:var(--negro)}
+@media(max-width:840px){.chapas{grid-template-columns:1fr}}
+
+/* ============ ubicación ============ */
+.ubi-grid{margin-top:2.4rem;display:grid;grid-template-columns:.9fr 1.1fr;gap:2.2rem;align-items:stretch}
+.ubi-txt h3{font-family:'Alfa Slab One';font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.18;text-transform:uppercase}
+.ubi-txt h3 em{font-style:normal;color:var(--rojo)}
+.ubi-txt p{margin-top:.9rem;color:#332f27;font-size:1.06rem}
+.ubi-datos{margin-top:1.5rem;display:flex;flex-direction:column;gap:.7rem;font-size:1rem}
+.ubi-datos div{display:flex;gap:.6rem;align-items:baseline}
+.ubi-datos .tijera{color:var(--rojo);font-weight:800}
+.mapa{border:3px solid var(--negro);border-radius:8px;overflow:hidden;min-height:340px;box-shadow:8px 8px 0 var(--negro)}
+.mapa iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.4) contrast(1.05)}
+@media(max-width:860px){.ubi-grid{grid-template-columns:1fr}.mapa{box-shadow:5px 5px 0 var(--negro)}}
+
+/* ============ cierre ============ */
+.cierre{
+  background:var(--negro);color:var(--crema);text-align:center;position:relative;overflow:hidden;
+}
+.cierre::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,var(--crema) 0,var(--crema) 9px,transparent 9px,transparent 26px);
+  opacity:.05;
+}
+.cierre .inner{position:relative}
+.cierre img.cabeza{width:88px;margin:0 auto 1.4rem}
+.cierre h2{font-family:'Alfa Slab One';font-size:clamp(1.9rem,4.4vw,3.2rem);text-transform:uppercase;line-height:1.08}
+.cierre h2 em{font-style:normal;color:var(--rojo)}
+.cierre p{margin:1rem auto 1.9rem;color:color-mix(in srgb,var(--crema) 82%,transparent);max-width:32em}
+
+/* ============ footer ============ */
+footer{background:var(--negro);color:color-mix(in srgb,var(--crema) 68%,transparent);font-size:.9rem;border-top:1px solid color-mix(in srgb,var(--crema) 15%,transparent)}
+.footer-inner{max-width:1180px;margin:0 auto;padding:2.6rem clamp(1.2rem,4vw,3rem) 1.8rem}
+.footer-top{display:flex;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;align-items:flex-start}
+.footer-top img.f-marca{height:64px;width:auto;opacity:.95}
+.f-datos{display:flex;gap:2.6rem;flex-wrap:wrap;line-height:1.7}
+.f-datos strong{color:var(--crema);font-weight:700}
+.f-redes{display:flex;flex-direction:column;gap:.55rem}
+.f-redes a{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;transition:color .2s}
+.f-redes a:hover{color:var(--crema)}
+.f-redes svg{width:17px;height:17px;flex:none}
+.footer-legal{margin-top:2rem;padding-top:1.3rem;border-top:1px solid color-mix(in srgb,var(--crema) 14%,transparent);font-size:.8rem;color:color-mix(in srgb,var(--crema) 42%,transparent)}
+
+/* ============ reveals ============ */
+.rv{opacity:0;visibility:hidden}
+.rv.in{opacity:1;visibility:visible}
+html.sin-gsap .rv{opacity:1;visibility:visible}
+
+/* wsp flotante */
+.wsp-flotante{
+  position:fixed;right:1.1rem;bottom:1.1rem;z-index:90;
+  width:58px;height:58px;border-radius:50%;background:#22c15e;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 30px -8px rgba(0,0,0,.45);
+  transition:transform .2s;
+}
+.wsp-flotante:hover{transform:scale(1.07)}
+.wsp-flotante svg{width:28px;height:28px}
+</style>
+</head>
+<body>
+
+<div class="barra">
+  <span>Barbería · Posadas</span>
+  <a class="tel" href="#" data-wsp>376 503-1630</a>
+</div>
+
+<!-- ============ PORTADA: póster ============ -->
+<header class="portada">
+  <div class="portada-inner">
+    <img class="badge rv" src="assets/logo-completo-blanco.png" alt="Cristian Navajas Barber Shop">
+    <h1 class="slab rv">El corte que buscás<em>ya tiene barbero.</em></h1>
+    <p class="servicios-linea rv">Cortes · Barba · Cejas · Diseños</p>
+    <div class="cta-zona rv">
+      <a class="btn-wsp" href="#" data-wsp>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.3.6-.6.8-.4 1.1.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1l.7-.9c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
+        Escribinos al WhatsApp
+      </a>
+      <span class="sin-turno">Sin turno de lun a sáb · 9 a 21 hs de corrido</span>
+    </div>
+  </div>
+</header>
+
+<div class="mudanza rv">
+  <span>Solo por julio</span><span class="flecha">→</span><span>Todos los miércoles, corte a $10.000</span>
+</div>
+
+<!-- ============ 01 · EL TRABAJO ============ -->
+<section id="trabajo">
+  <div class="inner">
+    <div class="cabezal rv">
+      <span class="nro">01</span>
+      <h2>El trabajo habla solo</h2>
+      <p class="nota">Fades, diseños tallados a máquina, barba y los primeros cortes de los más chicos. Todo esto salió de nuestras sillas.</p>
+    </div>
+    <div class="mosaico">
+      <div class="pieza alta rv"><img src="assets/fotos/corte-06.jpg" alt="Corte mullet con desconexión"></div>
+      <div class="pieza media rv gira-a"><img src="assets/fotos/corte-03.jpg" alt="Corte infantil con línea marcada"></div>
+      <div class="pieza media rv"><img src="assets/fotos/corte-08.jpg" alt="Fade con diseño tallado"></div>
+      <div class="pieza alta rv gira-b"><img src="assets/fotos/corte-02.jpg" alt="Corte texturizado juvenil"></div>
+      <div class="pieza media rv"><img src="assets/fotos/corte-09.jpg" alt="Diseño zigzag en fade"></div>
+      <div class="pieza media rv gira-a"><img src="assets/fotos/corte-04.jpg" alt="Corte infantil prolijo"></div>
+      <div class="pieza media rv"><img src="assets/fotos/corte-01.jpg" alt="Fade clásico"></div>
+      <div class="pieza media rv gira-b"><img src="assets/fotos/corte-07.jpg" alt="Fade con logo de la barbería de fondo"></div>
+      <div class="pieza media rv"><img src="assets/fotos/corte-05.jpg" alt="Fade con capa celeste"></div>
+      <div class="pieza media rv"><img src="assets/fotos/corte-10.jpg" alt="Fade limpio al ras"></div>
+    </div>
+    <div class="mosaico-pie rv">
+      <a class="link-negro" href="https://www.instagram.com/cristiannavajas_barbershop" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Ver más en Instagram
+      </a>
+      <span class="social">Más de <b>2.800 personas</b> siguen el trabajo de Cristian.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · PRECIOS (pizarra) ============ -->
+<section class="zona-pizarra" id="precios">
+  <div class="inner">
+    <div class="cabezal rv">
+      <span class="nro">02</span>
+      <h2>La lista, clara</h2>
+    </div>
+    <div class="pizarra rv">
+      <div class="poste" id="poste"></div>
+      <p class="pizarra-titulo">— Servicios —</p>
+      <div class="item-wrap promo">
+        <div class="item"><span class="nombre">★ Miércoles de julio</span><span class="puntos"></span><span class="valor">$10.000</span></div>
+        <p class="detalle" style="font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.4rem;padding-bottom:.6rem">Promo de corte válida todos los miércoles, solo hasta fin de julio</p>
+      </div>
+      <div class="item-wrap">
+        <div class="item"><span class="nombre">Corte</span><span class="puntos"></span><span class="valor">Consultá</span></div>
+        <p class="detalle" style="font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.4rem;padding-bottom:.6rem">Todas las edades · clásico, fade o freestyle</p>
+      </div>
+      <div class="item-wrap">
+        <div class="item"><span class="nombre">Corte + barba</span><span class="puntos"></span><span class="valor">Consultá</span></div>
+      </div>
+      <div class="item-wrap">
+        <div class="item"><span class="nombre">Perfilado de barba</span><span class="puntos"></span><span class="valor">Consultá</span></div>
+      </div>
+      <div class="item-wrap">
+        <div class="item"><span class="nombre">Perfilado de cejas</span><span class="puntos"></span><span class="valor">Consultá</span></div>
+      </div>
+      <div class="item-wrap">
+        <div class="item"><span class="nombre">Diseños freestyle</span><span class="puntos"></span><span class="valor">Consultá</span></div>
+        <p class="detalle" style="font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.4rem;padding-bottom:.6rem">Líneas, tribales y dibujos tallados a máquina</p>
+      </div>
+      <p class="pizarra-pie">Precios al día por WhatsApp · Efectivo y transferencia</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · CÓMO ATENDEMOS ============ -->
+<section id="horarios">
+  <div class="inner">
+    <div class="cabezal rv" style="margin-bottom:2.4rem">
+      <span class="nro">03</span>
+      <h2>Venís y te atendemos</h2>
+    </div>
+    <div class="chapas">
+      <div class="chapa rv">
+        <h3>De lunes a sábado, <em>sin turno.</em></h3>
+        <p>Por orden de llegada, como la barbería de siempre. Venís, esperás lo justo y salís peinado. Sin apps ni vueltas.</p>
+        <span class="franja">Lun a sáb · 9:00 a 21:00 de corrido</span>
+      </div>
+      <div class="chapa roja rv">
+        <h3>Domingos con turno previo</h3>
+        <p>El domingo se reserva: escribinos por WhatsApp y coordinamos tu horario.</p>
+        <span class="franja">Dom · 10:00 a 14:00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · UBICACIÓN ============ -->
+<section id="ubicacion" style="background:var(--crema-2)">
+  <div class="inner">
+    <div class="cabezal rv">
+      <span class="nro">04</span>
+      <h2>Dónde estamos</h2>
+    </div>
+    <div class="ubi-grid">
+      <div class="ubi-txt rv">
+        <h3><em>Avenida Blas Parera 4691,</em> Posadas.</h3>
+        <p>Sobre la avenida, fácil de llegar y de encontrar: buscá el logo en la vidriera.</p>
+        <div class="ubi-datos">
+          <div><span class="tijera">✂</span><span><strong>Avenida Blas Parera 4691</strong> · Posadas, Misiones</span></div>
+          <div><span class="tijera">✂</span><span>Lun a sáb de 9 a 21 hs de corrido</span></div>
+          <div><span class="tijera">✂</span><span>Domingos de 10 a 14 con turno previo</span></div>
+        </div>
+      </div>
+      <div class="mapa rv">
+        <iframe title="Mapa: Cristian Navajas Barber Shop, Avenida Blas Parera 4691, Posadas" loading="lazy"
+          src="https://maps.google.com/maps?q=Av.%20Blas%20Parera%204691%2C%20Posadas%2C%20Misiones&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="cierre">
+  <div class="inner">
+    <img class="cabeza rv" src="assets/cabeza-blanco.png" alt="">
+    <h2 class="rv">Pasá cuando <em>quieras.</em></h2>
+    <p class="rv">Avenida Blas Parera 4691, Posadas · Lun a sáb de 9 a 21. Si querés, avisanos que venís:</p>
+    <a class="btn-wsp rv" style="display:inline-flex" href="#" data-wsp>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.3.6-.6.8-.4 1.1.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1l.7-.9c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
+      376 503-1630
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <img class="f-marca" src="assets/logo-completo-blanco.png" alt="Cristian Navajas Barber Shop">
+      <div class="f-datos">
+        <div><strong>Barbería</strong><br>Avenida Blas Parera 4691<br>Posadas, Misiones</div>
+        <div><strong>Horarios</strong><br>Lun a sáb · 9 a 21 hs<br>Dom · 10 a 14 (con turno)</div>
+        <div class="f-redes">
+          <a href="https://www.instagram.com/cristiannavajas_barbershop" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            @cristiannavajas_barbershop
+          </a>
+          <a href="https://www.tiktok.com/@cristian.navajas" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.77.12V9.77a5.76 5.76 0 0 0-.77-.05 5.69 5.69 0 1 0 5.69 5.69V9.01a7.35 7.35 0 0 0 4.29 1.38V7.3a4.28 4.28 0 0 1-3.24-1.48Z"/></svg>
+            @cristian.navajas
+          </a>
+          <a href="https://www.facebook.com/cristiannavajass" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg>
+            Cristianavajas-barbershop
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p><strong>Aviso legal.</strong> Este sitio pertenece a Cristian Navajas Barber Shop, con local en Avenida Blas Parera 4691, Posadas, Misiones, Argentina. Contacto: WhatsApp 376 503-1630. Los horarios informados pueden variar en feriados o por causas de fuerza mayor.</p>
+      <p><strong>Precios y promociones.</strong> Los valores publicados son informativos y pueden actualizarse sin previo aviso; el precio vigente se confirma por WhatsApp o en el local. La promoción de corte a $10.000 aplica únicamente los días miércoles de julio de 2026 en el local, y finaliza el 31/07/2026.</p>
+      <p><strong>Datos personales (Ley 25.326).</strong> Este sitio no utiliza formularios ni recopila datos personales de los visitantes. El contacto se realiza por WhatsApp, donde los datos que compartas se usan solo para coordinar tu atención. Podés solicitar su supresión escribiéndonos. La Agencia de Acceso a la Información Pública es el órgano de control de la Ley 25.326.</p>
+      <p><strong>Imágenes.</strong> Las fotografías muestran trabajos reales realizados en la barbería y se publican con autorización de los clientes (o de sus padres o tutores en el caso de menores). Si aparecés en una imagen y querés que la retiremos, escribinos y la damos de baja.</p>
+      <p>© 2026 Cristian Navajas Barber Shop. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="wsp-flotante" href="#" data-wsp aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.3.6-.6.8-.4 1.1.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1l.7-.9c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var WSP = '5493765031630';
+  var MSG = encodeURIComponent('Hola! Quiero consultar por un corte');
+  document.querySelectorAll('[data-wsp]').forEach(function(a){
+    a.href = 'https://wa.me/' + WSP + '?text=' + MSG;
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+
+  /* Sin GSAP: todo visible y estático. Con GSAP: animaciones SIEMPRE
+     (también con prefers-reduced-motion — decisión del dueño del sitio). */
+  if(!window.gsap){
+    document.documentElement.classList.add('sin-gsap');
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  var lenis = new Lenis({ lerp: 0.11 });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+  gsap.ticker.lagSmoothing(0);
+
+  /* portada: el badge cae y la tipografía lo sigue */
+  var intro = gsap.timeline({defaults:{ease:'power3.out'}});
+  intro.fromTo('.badge', {y:-40, autoAlpha:0, scale:.92}, {y:0, autoAlpha:1, scale:1, duration:1, ease:'back.out(1.4)'})
+       .fromTo('.portada h1', {y:26, autoAlpha:0}, {y:0, autoAlpha:1, duration:.8}, '-=.45')
+       .fromTo('.servicios-linea', {autoAlpha:0, letterSpacing:'.6em'}, {autoAlpha:1, letterSpacing:'.34em', duration:.9}, '-=.5')
+       .fromTo('.cta-zona', {y:18, autoAlpha:0}, {y:0, autoAlpha:1, duration:.7}, '-=.5')
+       .fromTo('.mudanza', {autoAlpha:0}, {autoAlpha:1, duration:.5}, '-=.3');
+
+  /* mosaico: cada foto se revela con clip + caída, en cascada */
+  gsap.utils.toArray('.pieza').forEach(function(p, i){
+    gsap.fromTo(p,
+      {autoAlpha:0, y:36, clipPath:'inset(18% 18% 18% 18%)'},
+      {autoAlpha:1, y:0, clipPath:'inset(0% 0% 0% 0%)', duration:.8, ease:'power3.out', delay:(i%4)*.09,
+       scrollTrigger:{trigger:p, start:'top 90%', once:true}});
+  });
+
+  /* reveals genéricos */
+  ScrollTrigger.batch('.rv:not(.pieza):not(.chapa)', {
+    start: 'top 88%', once: true,
+    onEnter: function(els){
+      gsap.fromTo(els, {y:26, autoAlpha:0}, {y:0, autoAlpha:1, duration:.75, ease:'power3.out', stagger:.09});
+    }
+  });
+
+  /* pizarra: los renglones se escriben de a uno */
+  gsap.utils.toArray('.item-wrap').forEach(function(it, i){
+    gsap.from(it, {x:-24, autoAlpha:0, duration:.6, ease:'power2.out', delay:i*.1,
+      scrollTrigger:{trigger:'.pizarra', start:'top 80%', once:true}});
+  });
+
+  /* chapas: entran desde lados opuestos.
+     fromTo con final explícito — .rv arranca en opacity:0 por CSS, y gsap.from()
+     grabaría ese 0 como valor final (bug: quedaban invisibles para siempre). */
+  gsap.utils.toArray('.chapa').forEach(function(c, i){
+    gsap.fromTo(c, {x:(i%2===0)?-80:80, autoAlpha:0},
+      {x:0, autoAlpha:1, duration:.85, ease:'power3.out',
+       scrollTrigger:{trigger:c, start:'top 86%', once:true}});
+  });
+
+  /* poste de barbero girando */
+  var poste = document.getElementById('poste');
+  if(poste){ gsap.to(poste, {backgroundPositionY:'220%', duration:3.4, ease:'none', repeat:-1}); }
+
+  /* botones magnéticos */
+  gsap.utils.toArray('.btn-wsp').forEach(function(btn){
+    var xTo = gsap.quickTo(btn, 'x', {duration:.4, ease:'power3'});
+    var yTo = gsap.quickTo(btn, 'y', {duration:.4, ease:'power3'});
+    btn.addEventListener('mousemove', function(e){
+      var b = btn.getBoundingClientRect();
+      xTo((e.clientX - b.left - b.width/2) * .25);
+      yTo((e.clientY - b.top - b.height/2) * .35);
+    });
+    btn.addEventListener('mouseleave', function(){ xTo(0); yTo(0); });
+  });
+})();
+</script>
+</body>
+</html>
