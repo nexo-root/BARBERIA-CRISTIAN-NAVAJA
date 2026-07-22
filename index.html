@@ -506,13 +506,16 @@ html.sin-gsap .rv{opacity:1;visibility:visible}
   gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
   gsap.ticker.lagSmoothing(0);
 
-  /* portada: el badge cae y la tipografía lo sigue */
+  /* portada: el badge cae y la tipografía lo sigue.
+     Estos elementos los maneja SOLO esta timeline — quedan fuera del batch de
+     scroll de más abajo (que apunta a 'section .rv'), porque dos tweens sobre
+     la misma propiedad producen parpadeo al cargar. */
   var intro = gsap.timeline({defaults:{ease:'power3.out'}});
-  intro.fromTo('.badge', {y:-40, autoAlpha:0, scale:.92}, {y:0, autoAlpha:1, scale:1, duration:1, ease:'back.out(1.4)'})
-       .fromTo('.portada h1', {y:26, autoAlpha:0}, {y:0, autoAlpha:1, duration:.8}, '-=.45')
-       .fromTo('.servicios-linea', {autoAlpha:0, letterSpacing:'.6em'}, {autoAlpha:1, letterSpacing:'.34em', duration:.9}, '-=.5')
-       .fromTo('.cta-zona', {y:18, autoAlpha:0}, {y:0, autoAlpha:1, duration:.7}, '-=.5')
-       .fromTo('.mudanza', {autoAlpha:0}, {autoAlpha:1, duration:.5}, '-=.3');
+  intro.fromTo('.badge', {y:-32, autoAlpha:0, scale:.94}, {y:0, autoAlpha:1, scale:1, duration:.8, ease:'back.out(1.4)'})
+       .fromTo('.portada h1', {y:22, autoAlpha:0}, {y:0, autoAlpha:1, duration:.6}, '-=.45')
+       .fromTo('.servicios-linea', {autoAlpha:0, letterSpacing:'.55em'}, {autoAlpha:1, letterSpacing:'.34em', duration:.7}, '-=.42')
+       .fromTo('.cta-zona', {y:14, autoAlpha:0}, {y:0, autoAlpha:1, duration:.55}, '-=.45')
+       .fromTo('.mudanza', {autoAlpha:0}, {autoAlpha:1, duration:.45}, '-=.4');
 
   /* mosaico: cada foto se revela con clip + caída, en cascada */
   gsap.utils.toArray('.pieza').forEach(function(p, i){
@@ -522,8 +525,11 @@ html.sin-gsap .rv{opacity:1;visibility:visible}
        scrollTrigger:{trigger:p, start:'top 90%', once:true}});
   });
 
-  /* reveals genéricos */
-  ScrollTrigger.batch('.rv:not(.pieza):not(.chapa)', {
+  /* reveals genéricos — solo dentro de <section>.
+     Deja afuera la portada y la faja de promo (los anima la timeline de intro)
+     y las piezas/chapas (tienen su propia animación). Un elemento con dos
+     tweens sobre autoAlpha parpadea al cargar. */
+  ScrollTrigger.batch('section .rv:not(.pieza):not(.chapa)', {
     start: 'top 88%', once: true,
     onEnter: function(els){
       gsap.fromTo(els, {y:26, autoAlpha:0}, {y:0, autoAlpha:1, duration:.75, ease:'power3.out', stagger:.09});
