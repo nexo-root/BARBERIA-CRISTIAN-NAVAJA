@@ -166,10 +166,11 @@ section{padding:clamp(3rem,7vh,5.5rem) clamp(1.2rem,4vw,3rem)}
    elegido foto por foto.
    El cuadrado no servía: en las fotos de reels la cabeza mide casi lo mismo
    que el ancho de la celda, así que el mentón se salía del cuadro.
-   10 fotos: 5 columnas = 2 filas justas, sin huecos. */
+   12 fotos: cierran parejo en 4, 3 y 2 columnas -> sin huecos en ningun
+   tamanio y sin tener que esconder ninguna. */
 .mosaico{
   margin-top:2.4rem;
-  display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
 }
 .pieza{
   border:3px solid var(--negro);border-radius:6px;overflow:hidden;
@@ -189,11 +190,9 @@ section{padding:clamp(3rem,7vh,5.5rem) clamp(1.2rem,4vw,3rem)}
 .link-negro svg{width:19px;height:19px}
 .mosaico-pie .social{color:var(--gris);font-size:1.02rem}
 .mosaico-pie .social b{color:var(--negro)}
-/* 10 fotos solo cierran parejo en 5 o 2 columnas. En el rango intermedio se
-   usan 3 columnas y se oculta la última: 9 fotos = 3x3 exacto, sin huecos. */
-@media(max-width:860px){.mosaico{grid-template-columns:repeat(3,1fr)}.pieza:nth-child(10){display:none}}
-/* Celular: 2 columnas x 5 filas = las 10 fotos, sin ningún hueco. */
-@media(max-width:560px){.mosaico{grid-template-columns:repeat(2,1fr)}.pieza:nth-child(10){display:block}}
+@media(max-width:860px){.mosaico{grid-template-columns:repeat(3,1fr)}}
+/* Celular: 2 columnas x 6 filas = las 12 fotos, sin ningún hueco. */
+@media(max-width:560px){.mosaico{grid-template-columns:repeat(2,1fr)}}
 
 /* ============ pizarra de precios ============ */
 .zona-pizarra{background:var(--negro);color:var(--crema);position:relative;overflow:hidden}
@@ -443,6 +442,8 @@ html.sin-gsap .rv{opacity:1;visibility:visible}
       <div class="pieza rv gira-b"><img src="assets/fotos/corte-07.jpg" alt="Fade con logo de la barbería de fondo"></div>
       <div class="pieza rv"><img src="assets/fotos/corte-05.jpg" alt="Fade con capa celeste"></div>
       <div class="pieza rv"><img src="assets/fotos/corte-10.jpg" alt="Fade limpio al ras"></div>
+      <div class="pieza rv gira-a"><img src="assets/fotos/corte-11.jpg" alt="Corte con fade y barba perfilada"></div>
+      <div class="pieza rv"><img src="assets/fotos/corte-12.jpg" alt="Mohawk platinado con fade"></div>
     </div>
     <div class="mosaico-pie rv">
       <a class="link-negro" href="https://www.instagram.com/cristiannavajas_barbershop" target="_blank" rel="noopener">
