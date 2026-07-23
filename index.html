@@ -202,32 +202,6 @@ section{padding:clamp(3rem,7vh,5.5rem) clamp(1.2rem,4vw,3rem)}
 .item-wrap.promo .nombre{color:var(--crema)}
 .item-wrap.promo + .item-wrap{border-top:none}
 .pizarra-pie{margin-top:1.6rem;text-align:center;font-size:.98rem;color:color-mix(in srgb,var(--crema) 78%,transparent)}
-/* Poste de barbero colgado de la pizarra — bucle por TRANSFORM, no por fondo.
-   Estructura: .poste (ventana, overflow hidden) > .poste-giro (rotado -30°,
-   estático) > .poste-cinta (rayas verticales de 42px de ciclo). El JS mueve la
-   CINTA con translateY dentro del marco ya rotado: su eje local coincide con
-   el de las rayas, así que 42px enteros = un ciclo exacto y el reinicio es
-   invisible. La cinta lleva 3 ciclos de sobra para cubrir la ventana siempre. */
-.poste{
-  position:absolute;left:-58px;top:50%;transform:translateY(-50%);
-  width:36px;height:150px;border-radius:20px;
-  border:3px solid var(--crema);
-  background:var(--negro);
-  overflow:hidden;
-}
-.poste-giro{
-  position:absolute;top:50%;left:50%;
-  width:140px;height:240px;
-  transform:translate(-50%,-50%) rotate(-30deg);
-}
-.poste-cinta{
-  position:absolute;left:0;top:-84px;
-  width:100%;height:calc(100% + 126px);
-  background:repeating-linear-gradient(180deg,
-    var(--rojo) 0 14px, var(--crema) 14px 28px, var(--negro) 28px 42px);
-  will-change:transform;
-}
-@media(max-width:980px){.poste{display:none}}
 
 /* ============ horarios (chapas) ============ */
 .chapas{margin-top:0;display:grid;grid-template-columns:1.15fr .85fr;gap:1.6rem}
@@ -289,6 +263,90 @@ footer{background:var(--negro);color:color-mix(in srgb,var(--crema) 68%,transpar
 .f-redes a:hover{color:var(--crema)}
 .f-redes svg{width:17px;height:17px;flex:none}
 .footer-legal{margin-top:2rem;padding-top:1.3rem;border-top:1px solid color-mix(in srgb,var(--crema) 14%,transparent);font-size:.8rem;color:color-mix(in srgb,var(--crema) 42%,transparent)}
+/* Legal plegado: el texto tiene que estar, pero no comerse la pantalla del celular */
+.footer-legal .legal summary{
+  cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:.45rem;
+  font-family:'Barlow Condensed';font-weight:600;font-size:.9rem;
+  text-transform:uppercase;letter-spacing:.08em;
+  color:color-mix(in srgb,var(--crema) 62%,transparent);
+}
+.footer-legal .legal summary::-webkit-details-marker{display:none}
+.footer-legal .legal summary::after{content:"+";font-family:'Alfa Slab One';font-size:.95rem;color:var(--rojo);transition:transform .25s}
+.footer-legal .legal[open] summary::after{transform:rotate(45deg)}
+.footer-legal .legal p{margin-top:.7rem;line-height:1.55}
+.footer-legal .copy{margin-top:1.1rem}
+
+/* ============================================================
+   CELULAR — compactado
+   La página medía 8,65 pantallas de scroll. Acá se achica todo
+   proporcionalmente (aires, tipografías, fotos) para que entre
+   más contenido por pantalla sin sacar ninguna sección.
+   ============================================================ */
+@media(max-width:640px){
+  section{padding:2.1rem 1.1rem}
+
+  /* portada */
+  .portada{padding:2rem 1.1rem 2.3rem}
+  .badge{width:min(42vw,180px)}
+  .portada h1{margin-top:1.2rem;font-size:1.72rem}
+  .portada .servicios-linea{margin-top:.9rem;font-size:.8rem;letter-spacing:.22em}
+  .portada .cta-zona{margin-top:1.5rem;gap:.6rem}
+  .portada .sin-turno{font-size:.82rem;letter-spacing:.1em}
+  .btn-wsp{padding:.8rem 1.4rem;font-size:.95rem}
+
+  .mudanza{padding:.65rem 1.1rem;font-size:.95rem;gap:.5rem}
+
+  /* cabezales: el número al lado del título, no en su propia línea */
+  .cabezal{gap:.6rem;flex-wrap:nowrap;align-items:center}
+  .cabezal .nro{font-size:1.9rem;-webkit-text-stroke-width:1.5px;flex:none}
+  .cabezal h2{font-size:1.42rem}
+  .cabezal .nota{margin-top:.5rem;font-size:.98rem;line-height:1.5}
+
+  /* galería: tiles más chicos = mucha menos altura */
+  .mosaico{margin-top:1.4rem;gap:9px;grid-auto-rows:84px}
+  .pieza{border-width:2px}
+  .mosaico-pie{margin-top:1.2rem;gap:.6rem}
+  .link-negro{font-size:1rem}
+  .mosaico-pie .social{font-size:.92rem}
+
+  /* pizarra de precios */
+  .pizarra{padding:1.15rem 1rem;margin-top:1.5rem;outline-offset:4px}
+  .pizarra-titulo{margin-bottom:1rem;font-size:.9rem;letter-spacing:.28em}
+  .item{padding:.55rem 0}
+  .item .nombre{font-size:1.12rem}
+  .item .valor{font-size:1rem}
+  .item .detalle,
+  .item-wrap p{font-size:.88rem!important;margin-top:-.3rem!important;padding-bottom:.35rem!important}
+  .item-wrap.promo{padding:.15rem .7rem .05rem;margin-bottom:.6rem}
+  .pizarra-pie{margin-top:1.1rem;font-size:.9rem}
+
+  /* chapas de horarios */
+  .chapas{gap:1rem}
+  .chapa{padding:1.2rem 1.1rem;box-shadow:5px 5px 0 var(--negro)}
+  .chapa h3{font-size:1.28rem}
+  .chapa p{margin-top:.55rem;font-size:.98rem}
+  .chapa .franja{margin-top:.9rem;font-size:1.02rem;padding:.28rem .7rem}
+
+  /* ubicación */
+  .ubi-grid{margin-top:1.5rem;gap:1.2rem}
+  .ubi-txt h3{font-size:1.25rem}
+  .ubi-txt p{margin-top:.6rem;font-size:.98rem}
+  .ubi-datos{margin-top:1rem;gap:.5rem;font-size:.95rem}
+  .mapa{min-height:230px;box-shadow:5px 5px 0 var(--negro)}
+  .mapa iframe{min-height:230px}
+
+  /* cierre */
+  .cierre img.cabeza{width:62px;margin-bottom:.9rem}
+  .cierre h2{font-size:1.62rem}
+  .cierre p{margin:.7rem auto 1.3rem;font-size:.98rem}
+
+  /* footer */
+  .footer-inner{padding:1.9rem 1.1rem 1.3rem}
+  .footer-top{gap:1.4rem}
+  .footer-top img.f-marca{height:48px}
+  .f-datos{gap:1.3rem;font-size:.9rem;line-height:1.55}
+  .footer-legal{margin-top:1.3rem;padding-top:1rem;font-size:.76rem}
+}
 
 /* ============ reveals ============ */
 .rv{opacity:0;visibility:hidden}
@@ -362,7 +420,6 @@ html.sin-gsap .rv{opacity:1;visibility:visible}
       <h2>La lista, clara</h2>
     </div>
     <div class="pizarra rv">
-      <div class="poste" id="poste"><span class="poste-giro"><span class="poste-cinta"></span></span></div>
       <p class="pizarra-titulo">— Servicios —</p>
       <div class="item-wrap promo">
         <div class="item"><span class="nombre">★ Miércoles de julio</span><span class="puntos"></span><span class="valor">$10.000</span></div>
@@ -474,11 +531,14 @@ html.sin-gsap .rv{opacity:1;visibility:visible}
       </div>
     </div>
     <div class="footer-legal">
-      <p><strong>Aviso legal.</strong> Este sitio pertenece a Cristian Navajas Barber Shop, con local en Avenida Blas Parera 4691, Posadas, Misiones, Argentina. Contacto: WhatsApp 376 503-1630. Los horarios informados pueden variar en feriados o por causas de fuerza mayor.</p>
-      <p><strong>Precios y promociones.</strong> Los valores publicados son informativos y pueden actualizarse sin previo aviso; el precio vigente se confirma por WhatsApp o en el local. La promoción de corte a $10.000 aplica únicamente los días miércoles de julio de 2026 en el local, y finaliza el 31/07/2026.</p>
-      <p><strong>Datos personales (Ley 25.326).</strong> Este sitio no utiliza formularios ni recopila datos personales de los visitantes. El contacto se realiza por WhatsApp, donde los datos que compartas se usan solo para coordinar tu atención. Podés solicitar su supresión escribiéndonos. La Agencia de Acceso a la Información Pública es el órgano de control de la Ley 25.326.</p>
-      <p><strong>Imágenes.</strong> Las fotografías muestran trabajos reales realizados en la barbería y se publican con autorización de los clientes (o de sus padres o tutores en el caso de menores). Si aparecés en una imagen y querés que la retiremos, escribinos y la damos de baja.</p>
-      <p>© 2026 Cristian Navajas Barber Shop. Todos los derechos reservados.</p>
+      <details class="legal">
+        <summary>Aviso legal, precios y protección de datos</summary>
+        <p><strong>Aviso legal.</strong> Este sitio pertenece a Cristian Navajas Barber Shop, con local en Avenida Blas Parera 4691, Posadas, Misiones, Argentina. Contacto: WhatsApp 376 503-1630. Los horarios informados pueden variar en feriados o por causas de fuerza mayor.</p>
+        <p><strong>Precios y promociones.</strong> Los valores publicados son informativos y pueden actualizarse sin previo aviso; el precio vigente se confirma por WhatsApp o en el local. La promoción de corte a $10.000 aplica únicamente los días miércoles de julio de 2026 en el local, y finaliza el 31/07/2026.</p>
+        <p><strong>Datos personales (Ley 25.326).</strong> Este sitio no utiliza formularios ni recopila datos personales de los visitantes. El contacto se realiza por WhatsApp, donde los datos que compartas se usan solo para coordinar tu atención. Podés solicitar su supresión escribiéndonos. La Agencia de Acceso a la Información Pública es el órgano de control de la Ley 25.326.</p>
+        <p><strong>Imágenes.</strong> Las fotografías muestran trabajos reales realizados en la barbería y se publican con autorización de los clientes (o de sus padres o tutores en el caso de menores). Si aparecés en una imagen y querés que la retiremos, escribinos y la damos de baja.</p>
+      </details>
+      <p class="copy">© 2026 Cristian Navajas Barber Shop. Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>
@@ -554,16 +614,6 @@ html.sin-gsap .rv{opacity:1;visibility:visible}
       {x:0, autoAlpha:1, duration:.85, ease:'power3.out',
        scrollTrigger:{trigger:c, start:'top 86%', once:true}});
   });
-
-  /* Poste de barbero girando, bucle infinito sin costura.
-     Se anima la CINTA por transform (translateY), nunca el background-position:
-     animar el fondo resultó frágil (quedó estático en producción). El wrapper
-     .poste-giro ya está rotado por CSS, así que el eje local de la cinta es el
-     de las rayas: bajar 42px enteros = un ciclo exacto, reinicio invisible. */
-  var cinta = document.querySelector('.poste-cinta');
-  if(cinta){
-    gsap.fromTo(cinta, {y: 0}, {y: 42, duration: .8, ease: 'none', repeat: -1});
-  }
 
   /* botones magnéticos */
   gsap.utils.toArray('.btn-wsp').forEach(function(btn){
