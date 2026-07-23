@@ -42,7 +42,25 @@
     "https://www.tiktok.com/@cristian.navajas",
     "https://www.facebook.com/cristiannavajass"
   ],
-  "priceRange": "$$"
+  "priceRange": "$$",
+  "currenciesAccepted": "ARS",
+  "paymentAccepted": "Efectivo, Transferencia",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios",
+    "itemListElement": [
+      { "@type": "Offer", "price": "12000", "priceCurrency": "ARS",
+        "itemOffered": { "@type": "Service", "name": "Corte de pelo",
+          "description": "Todas las edades. Incluye perfilado de cejas y diseños." } },
+      { "@type": "Offer", "price": "15000", "priceCurrency": "ARS",
+        "itemOffered": { "@type": "Service", "name": "Corte + barba" } },
+      { "@type": "Offer", "price": "5000", "priceCurrency": "ARS",
+        "itemOffered": { "@type": "Service", "name": "Barba",
+          "description": "Perfilado y arreglo de barba." } },
+      { "@type": "Offer", "price": "10000", "priceCurrency": "ARS",
+        "itemOffered": { "@type": "Service", "name": "Corte — promo de los miércoles" } }
+    ]
+  }
 }
 </script>
 <style>
@@ -207,6 +225,12 @@ section{padding:clamp(3rem,7vh,5.5rem) clamp(1.2rem,4vw,3rem)}
 .item .nombre{font-family:'Barlow Condensed';font-weight:700;font-size:clamp(1.25rem,2.4vw,1.7rem);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
 .item .puntos{flex:1;border-bottom:3px dotted color-mix(in srgb,var(--crema) 35%,transparent);transform:translateY(-6px)}
 .item .valor{font-family:'Alfa Slab One';font-size:clamp(1.05rem,2vw,1.4rem);color:var(--rojo);white-space:nowrap}
+/* "Incluido" no es un precio: va en crema y más chico para que los $ manden */
+.item .valor.incluido{
+  font-family:'Barlow Condensed';font-weight:700;
+  font-size:clamp(.95rem,1.6vw,1.12rem);letter-spacing:.06em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--crema) 80%,transparent);
+}
 .item .detalle{width:100%;font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.5rem;padding-bottom:.5rem}
 .item-wrap{display:flex;flex-direction:column}
 .item-wrap + .item-wrap{border-top:1px solid color-mix(in srgb,var(--crema) 14%,transparent)}
@@ -397,7 +421,7 @@ html.sin-gsap .rv{opacity:1;visibility:visible}
 </header>
 
 <div class="mudanza rv">
-  <span>Solo por julio</span><span class="flecha">→</span><span>Todos los miércoles, corte a $10.000</span>
+  <span>Por este mes</span><span class="flecha">→</span><span>Todos los miércoles, corte a $10.000</span>
 </div>
 
 <!-- ============ 01 · EL TRABAJO ============ -->
@@ -440,25 +464,26 @@ html.sin-gsap .rv{opacity:1;visibility:visible}
     <div class="pizarra rv">
       <p class="pizarra-titulo">— Servicios —</p>
       <div class="item-wrap promo">
-        <div class="item"><span class="nombre">★ Miércoles de julio</span><span class="puntos"></span><span class="valor">$10.000</span></div>
-        <p class="detalle" style="font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.4rem;padding-bottom:.6rem">Promo de corte válida todos los miércoles, solo hasta fin de julio</p>
+        <div class="item"><span class="nombre">★ Miércoles</span><span class="puntos"></span><span class="valor">$10.000</span></div>
+        <p class="detalle" style="font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.4rem;padding-bottom:.6rem">Promo de corte, todos los miércoles de este mes</p>
       </div>
       <div class="item-wrap">
-        <div class="item"><span class="nombre">Corte</span><span class="puntos"></span><span class="valor">Consultá</span></div>
+        <div class="item"><span class="nombre">Corte</span><span class="puntos"></span><span class="valor">$12.000</span></div>
         <p class="detalle" style="font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.4rem;padding-bottom:.6rem">Todas las edades · clásico, fade o freestyle</p>
       </div>
       <div class="item-wrap">
-        <div class="item"><span class="nombre">Corte + barba</span><span class="puntos"></span><span class="valor">Consultá</span></div>
+        <div class="item"><span class="nombre">Corte + barba</span><span class="puntos"></span><span class="valor">$15.000</span></div>
       </div>
       <div class="item-wrap">
-        <div class="item"><span class="nombre">Perfilado de barba</span><span class="puntos"></span><span class="valor">Consultá</span></div>
+        <div class="item"><span class="nombre">Barba</span><span class="puntos"></span><span class="valor">$5.000</span></div>
+        <p class="detalle" style="font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.4rem;padding-bottom:.6rem">Perfilado y arreglo de barba</p>
       </div>
       <div class="item-wrap">
-        <div class="item"><span class="nombre">Perfilado de cejas</span><span class="puntos"></span><span class="valor">Consultá</span></div>
+        <div class="item"><span class="nombre">Perfilado de cejas</span><span class="puntos"></span><span class="valor incluido">Incluido</span></div>
       </div>
       <div class="item-wrap">
-        <div class="item"><span class="nombre">Diseños freestyle</span><span class="puntos"></span><span class="valor">Consultá</span></div>
-        <p class="detalle" style="font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.4rem;padding-bottom:.6rem">Líneas, tribales y dibujos tallados a máquina</p>
+        <div class="item"><span class="nombre">Diseños freestyle</span><span class="puntos"></span><span class="valor incluido">Incluido</span></div>
+        <p class="detalle" style="font-size:.97rem;color:color-mix(in srgb,var(--crema) 78%,transparent);margin-top:-.4rem;padding-bottom:.6rem">Líneas, tribales y dibujos tallados a máquina — van con el corte</p>
       </div>
       <p class="pizarra-pie">Precios al día por WhatsApp · Efectivo y transferencia</p>
     </div>
@@ -552,7 +577,7 @@ html.sin-gsap .rv{opacity:1;visibility:visible}
       <details class="legal">
         <summary>Aviso legal, precios y protección de datos</summary>
         <p><strong>Aviso legal.</strong> Este sitio pertenece a Cristian Navajas Barber Shop, con local en Avenida Blas Parera 4691, Posadas, Misiones, Argentina. Contacto: WhatsApp 376 503-1630. Los horarios informados pueden variar en feriados o por causas de fuerza mayor.</p>
-        <p><strong>Precios y promociones.</strong> Los valores publicados son informativos y pueden actualizarse sin previo aviso; el precio vigente se confirma por WhatsApp o en el local. La promoción de corte a $10.000 aplica únicamente los días miércoles de julio de 2026 en el local, y finaliza el 31/07/2026.</p>
+        <p><strong>Precios y promociones.</strong> Los valores publicados son informativos y pueden actualizarse sin previo aviso; el precio vigente se confirma por WhatsApp o en el local. La promoción de corte a $10.000 aplica los días miércoles, en el local, mientras se encuentre publicada en este sitio, y puede modificarse o darse de baja sin previo aviso.</p>
         <p><strong>Datos personales (Ley 25.326).</strong> Este sitio no utiliza formularios ni recopila datos personales de los visitantes. El contacto se realiza por WhatsApp, donde los datos que compartas se usan solo para coordinar tu atención. Podés solicitar su supresión escribiéndonos. La Agencia de Acceso a la Información Pública es el órgano de control de la Ley 25.326.</p>
         <p><strong>Imágenes.</strong> Las fotografías muestran trabajos reales realizados en la barbería y se publican con autorización de los clientes (o de sus padres o tutores en el caso de menores). Si aparecés en una imagen y querés que la retiremos, escribinos y la damos de baja.</p>
       </details>
