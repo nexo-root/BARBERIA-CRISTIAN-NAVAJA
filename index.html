@@ -87,14 +87,14 @@ a{color:inherit}
   padding:clamp(3rem,8vh,5.5rem) clamp(1.2rem,4vw,3rem) clamp(3.2rem,8vh,5.5rem);
   text-align:center;position:relative;overflow:hidden;
 }
-/* rayas laterales del local, solo en los bordes — el centro queda limpio */
-.portada::before,.portada::after{
-  content:"";position:absolute;top:0;bottom:0;width:clamp(30px,7vw,110px);
+/* Rayas del local a lo ancho de TODA la portada (igual que la sección 02).
+   Antes eran dos franjas solo en los bordes; ahora inset:0 cubre el fondo
+   completo. Opacidad .06 para que el logo y el título respiren encima. */
+.portada::before{
+  content:"";position:absolute;inset:0;
   background:repeating-linear-gradient(90deg,var(--crema) 0,var(--crema) 9px,transparent 9px,transparent 26px);
-  opacity:.14;
+  opacity:.06;
 }
-.portada::before{left:0}
-.portada::after{right:0}
 .portada-inner{position:relative;max-width:900px;margin:0 auto}
 .badge{width:min(46vw,300px);margin:0 auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.5))}
 .portada h1{
@@ -301,7 +301,9 @@ footer{background:var(--negro);color:color-mix(in srgb,var(--crema) 68%,transpar
   .portada .sin-turno{font-size:.82rem;letter-spacing:.1em}
   .btn-wsp{padding:.8rem 1.4rem;font-size:.95rem}
 
+  /* en celular la faja se parte en dos líneas y la flecha queda suelta */
   .mudanza{padding:.65rem 1.1rem;font-size:.95rem;gap:.5rem}
+  .mudanza .flecha{display:none}
 
   /* cabezales: el número al lado del título, no en su propia línea */
   .cabezal{gap:.6rem;flex-wrap:nowrap;align-items:center}
